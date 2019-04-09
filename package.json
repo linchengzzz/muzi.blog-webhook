@@ -1,0 +1,14 @@
+{
+  "name": "release",
+  "version": "1.0.0",
+  "description": "muzi.blog release project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "linchengzzz",
+  "license": "ISC",
+  "dependencies": {
+    "github-webhook-handler": "^0.7.1"
+  }
+}
