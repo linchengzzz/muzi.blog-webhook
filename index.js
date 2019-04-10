@@ -1,8 +1,6 @@
 const http = require('http');
-const fs = require('fs');
 const createHandler = require('github-webhook-handler');
-const secret = fs.readFileSync('./secret', 'utf8');
-const handler = createHandler({ path: '/webhook', secret: secret });
+const handler = createHandler({ path: '/webhook', secret: '******' });
 
 http.createServer((req, res) => {
     handler(req, res, _ => {
@@ -14,7 +12,7 @@ http.createServer((req, res) => {
 function runCmd(cmd, args, callback) {
     const spawn = require('child_process').spawn;
     const child = spawn(cmd, args);
-    const response = '';
+    let response = '';
 
     child.stdout.on('data', buffer => response += buffer.toString());
     child.stdout.on('end', _ => callback(response));
